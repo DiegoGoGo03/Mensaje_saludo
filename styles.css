@@ -17,6 +17,8 @@ input[type="text"] {
     padding: 0.5rem;
     margin-top: 0.3rem;
 }
+
+/*BOTONES*/
 button {
     margin-top: 1.5rem;
     padding: 0.7rem 1.2rem;
@@ -26,6 +28,17 @@ button {
     cursor: pointer;
     width: 100%;
 }
+
+#button_copy {
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.2rem;
+    background-color: #49d01b;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
 #resultado {
     margin-top: 1.5rem;
     background: #e0e0e0;
@@ -33,9 +46,12 @@ button {
     border-radius: 5px;
     word-break: break-word;
 }
+
+
+/*PIE DE PÁGINA*/
 footer {
-    margin-top: 2rem;
+    margin-top: 0.2rem;
     text-align: center;
     font-size: 0.9rem;
-    color: #555;
+    color: #2181b1;
 }

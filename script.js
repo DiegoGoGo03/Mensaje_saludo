@@ -15,3 +15,19 @@ function generarMensaje() {
     .then(() => console.log("Mensaje copiado al portapapeles."))
     .catch(err => console.warn("No se pudo copiar: ", err));
 }
+
+function copiarMensaje() {
+    const mensaje = document.getElementById("resultado").innerText;
+
+    if (!mensaje) {
+        alert("Primero genera el mensaje antes de copiar.");
+        return;
+    }
+
+    navigator.clipboard.writeText(mensaje)
+        .then(() => alert("Mensaje copiado al portapapeles."))
+        .catch(err => console.warn("No se pudo copiar: ", err));
+}
+
+// Asociar botón a la función
+document.getElementById("button_copy").addEventListener("click", copiarMensaje);
