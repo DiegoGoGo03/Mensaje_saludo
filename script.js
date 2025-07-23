@@ -1,11 +1,29 @@
+function verificarOtro() {
+    const operador = document.getElementById('operador').value;
+    const inputOtro = document.getElementById('otroOperador').value;
+    if (operador === "otro") {
+        inputOtro.style.display = "inline-block"
+    } else {
+        inputOtro.style.display = "none";
+        inputOtro.value = "";
+    }
+}
+
 function generarMensaje() {
     const nombre = document.getElementById('nombre').value.trim();
     const ticket = document.getElementById('ticket').value.trim();
-    const tuNombre = "Diego";
+    const operadorSelect = document.getElementById('operador').value;
+    const otroNombre = document.getElementById('otroOperador').value.trim()
+
+    let tuNombre = operadorSelect === "otro" ? otroNombre : operadorSelect;
+
+    if (!nombre || !ticket || !tuNombre) {
+        alert("Por favor llena todos los campos")
+    }
 
     if (!nombre || !ticket) {
-    alert("Por favor llena todos los campos.");
-    return;
+        alert("Por favor llena todos los campos.");
+        return;
     }
 
     const mensaje = `Hola ${nombre} buen día, te escribe ${tuNombre} y seré el encargado de tu consulta con No. de Ticket ${ticket}.`;

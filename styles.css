@@ -48,6 +48,11 @@ button {
 }
 
 
+#otroOperador {
+    display: none;
+    margin-left: 10px;
+}
+
 /*PIE DE PÁGINA*/
 footer {
     margin-top: 0.2rem;
