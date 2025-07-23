@@ -1,6 +1,6 @@
 function verificarOtro() {
     const operador = document.getElementById('operador').value;
-    const inputOtro = document.getElementById('otroOperador').value;
+    const inputOtro = document.getElementById('otroOperador');
     if (operador === "otro") {
         inputOtro.style.display = "inline-block"
     } else {
