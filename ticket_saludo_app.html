@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>Generador de Mensaje para Ticket</h2>
+  <h2>Generador de Saludo para Ticket</h2>
   <label for="operador">Selecciona tu nombre:</label>
-  <select id="operador" onchange="verificarOtro()">
+  <select id="operador" onchange="verificarOtro('operador', 'otroOperador')">
     <option value="Diego Gómez">Diego Gómez</option>
     <option value="Edwin Yaya">Edwin Yaya</option>
     <option value="Juan Sebastián">Juan Sebastián</option>
@@ -20,9 +20,6 @@
 
   <input type="text" id="otroOperador" placeholder="Escribe tu nombre">
   <br><br>
-
-
-
   <label for="nombre">Nombre del usuario:</label>
   <input type="text" id="nombre" placeholder="Ej: Danilo">
 
@@ -33,6 +30,24 @@
 
   <div id="resultado"></div>
   <button id="button_copy" type="button">Copiar mensaje</button>
+
+  <h2>Saludo cuando no estoy disponible</h2>
+  <label for="operadorNoDisponible">Selecciona tu nombre:</label>
+  <select id="operadorNoDisponible" onchange="verificarOtro('operadorNoDisponible', 'otroOperadorNoDisponible')">
+    <option value="Diego Gómez">Diego Gómez</option>
+    <option value="Edwin Yaya">Edwin Yaya</option>
+    <option value="Juan Sebastián">Juan Sebastián</option>
+    <option value="Leonardo Roa">Leonardo Roa</option>
+    <option value="Paula Matamoros">Paula Matamoros</option>
+    <option value="otro">Otro</option>
+  </select>
+  <input type="text" id="otroOperadorNoDisponible" placeholder="Escribe tu nombre">
+  <br><br>
+  <button onclick="generarMensajeNoDisponible()">Generar mensaje no disponible</button>
+  <div id="resultadoNoDisponible"></div>
+
+
+
   <br><br><br><br><br><br><br><br><br><br>
   <br><br><br><br>
 

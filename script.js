@@ -1,14 +1,18 @@
-function verificarOtro() {
-    const operador = document.getElementById('operador').value;
-    const inputOtro = document.getElementById('otroOperador');
+function verificarOtro(selectId, inputId) {
+    const operador = document.getElementById(selectId).value;
+    const inputOtro = document.getElementById(inputId);
     if (operador === "otro") {
+        //Mostar Campo
         inputOtro.style.display = "inline-block"
     } else {
+        //Ocultar Campo
         inputOtro.style.display = "none";
+        //Limpiar Campo
         inputOtro.value = "";
     }
 }
 
+//Mensaje de saludo
 function generarMensaje() {
     const nombre = document.getElementById('nombre').value.trim();
     const ticket = document.getElementById('ticket').value.trim();
@@ -34,6 +38,7 @@ function generarMensaje() {
     .catch(err => console.warn("No se pudo copiar: ", err));
 }
 
+//Copiar mensaje de saludo
 function copiarMensaje() {
     const mensaje = document.getElementById("resultado").innerText;
 
@@ -49,3 +54,20 @@ function copiarMensaje() {
 
 // Asociar botón a la función
 document.getElementById("button_copy").addEventListener("click", copiarMensaje);
+
+
+//Generar mensaje de No Disponible.
+function generarMensajeNoDisponible() {
+    const operadorSelect = document.getElementById("operadorNoDisponible").value;
+    const otroOperador = document.getElementById("otroOperadorNoDisponible").value;
+    
+    let operador = operadorSelect === "otro" ? otroOperador : operadorSelect;
+    
+    if (!operador) {
+        alert("Por favor, selecciona o escribe un nombre de operador.");
+        return;
+    }
+    
+    const mensaje = `Hola, soy ${operador}. Actualmente no estoy disponible, pero tu solicitud será atendida por nuestro equipo lo antes posible.`;
+    document.getElementById("resultadoNoDisponible").innerText = mensaje;
+}
