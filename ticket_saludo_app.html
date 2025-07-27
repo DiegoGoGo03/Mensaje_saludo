@@ -32,6 +32,7 @@
   <button id="button_copy" type="button">Copiar mensaje</button>
 
   <h2>Saludo cuando no estoy disponible</h2>
+  <h3 id="informacion">Responder a los clientes siempre que se asigne un Ticket si no podemos atender en el momento. Con esto el cliente sabrá que tenemos su consulta en cola y no lo estamos ignorando.</h3>
   <label for="operadorNoDisponible">Selecciona tu nombre:</label>
   <select id="operadorNoDisponible" onchange="verificarOtro('operadorNoDisponible', 'otroOperadorNoDisponible')">
     <option value="Diego Gómez">Diego Gómez</option>
@@ -50,6 +51,26 @@
   <button onclick="generarMensajeNoDisponible()">Generar mensaje no disponible</button>
   <div id="resultadoNoDisponible"></div>
   <button id="button_copy_nd" type="button">Copiar mensaje</button>
+
+  <h2>Mensaje por inactividad mayor a 1 hora</h2>
+  <h3 id="informacion">Si hemos brindado una respuesta al cliente y este lleva 1 hora sin responder. Si el cliente finalmente no responde, se cerrará automáticamente la consulta.</h3>
+  <!--
+  <label for="operadorInactividad">Selecciona tu nombre:</label>
+  <select id="operadorInactividad" onchange="verificarOtro('operadorInactividad', 'otroOperadorInactividad')">
+    <option value="Diego Gómez">Diego Gómez</option>
+    <option value="Edwin Yaya">Edwin Yaya</option>
+    <option value="Juan Sebastián">Juan Sebastián</option>
+    <option value="Leonardo Roa">Leonardo Roa</option>
+    <option value="Paula Matamoros">Paula Matamoros</option>
+    <option value="otro">Otro</option>
+  </select>
+  <input type="text" id="otroOperadorInactividad" placeholder="Escribe tu nombre">
+  -->
+  <button id="botonGeneraInactividad" onclick="generarMensajeInactividad()">Generar mensaje de inactividad</button>
+  <div id="resultadoInactividad"></div>
+  <button id="button_copy_inac" type="button">Copiar mensaje</button>
+
+
 
   <br><br><br><br><br><br><br><br><br><br>
   <br><br><br><br>

@@ -77,3 +77,20 @@ function generarMensajeNoDisponible() {
         .then(() => console.log("Mensaje copiado al portapapeles."))
         .catch(err => console.warn("No se pudo copiar: ", err));
 }
+
+// Asociar botón a la función Botón de mensaje no disponible
+document.getElementById("button_copy_nd").addEventListener("click", copiarMensaje);
+
+//Mensaje por inactiviadad.
+function generarMensajeInactividad() {
+    const mensaje = `Su sesión de consulta ha excedido el tiempo permitido por inactividad y, por lo tanto, se cerrará automáticamente. Si requiere más asistencia, no dude en comunicarse nuevamente con el soporte técnico de Tekla Structures. Estaremos encantados de ayudarle.`
+
+    document.getElementById("resultadoInactividad").innerText = mensaje;
+
+    navigator.clipboard.writeText(mensaje)
+        .then(() => console.log("Mensaje copiado al portapapeles."))
+        .catch(err => console.warn("No se pudo copiar: ", err));
+}
+
+// Asociar botón a la función Botón de Mensaje por inactividad
+document.getElementById("button_copy_inac").addEventListener("click", copiarMensaje);
