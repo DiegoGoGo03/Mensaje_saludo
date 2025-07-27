@@ -29,7 +29,8 @@ button {
     width: 100%;
 }
 
-#button_copy {
+#button_copy, #button_copy_nd
+ {
     margin-top: 1.5rem;
     padding: 0.7rem 1.2rem;
     background-color: #49d01b;
@@ -39,9 +40,9 @@ button {
     width: 100%;
 }
 
-#resultado {
+#resultado, #resultadoNoDisponible {
     margin-top: 1.5rem;
-    background: #e0e0e0;
+    background: #ff83f5;
     padding: 1rem;
     border-radius: 5px;
     word-break: break-word;

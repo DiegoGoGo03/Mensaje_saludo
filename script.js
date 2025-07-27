@@ -58,6 +58,7 @@ document.getElementById("button_copy").addEventListener("click", copiarMensaje);
 
 //Generar mensaje de No Disponible.
 function generarMensajeNoDisponible() {
+    const nombre_usuario = document.getElementById('nombre_usuario').value.trim();
     const operadorSelect = document.getElementById("operadorNoDisponible").value;
     const otroOperador = document.getElementById("otroOperadorNoDisponible").value;
     
@@ -68,6 +69,11 @@ function generarMensajeNoDisponible() {
         return;
     }
     
-    const mensaje = `Hola, soy ${operador}. Actualmente no estoy disponible, pero tu solicitud será atendida por nuestro equipo lo antes posible.`;
+    const mensaje = `Hola ${nombre_usuario}, soy ${operador}, el técnico asignado para ayudarte. En este momento no puedo responder de inmediato, pero en unos minutos revisaré tu consulta con atención. Si deseas, puedes ampliar los detalles mientras tanto para agilizar la solución. ¡Gracias por tu paciencia!`
+
     document.getElementById("resultadoNoDisponible").innerText = mensaje;
+
+    navigator.clipboard.writeText(mensaje)
+        .then(() => console.log("Mensaje copiado al portapapeles."))
+        .catch(err => console.warn("No se pudo copiar: ", err));
 }
