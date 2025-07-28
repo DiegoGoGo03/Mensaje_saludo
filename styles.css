@@ -39,8 +39,10 @@ button {
     margin-top: 0.5rem;
 }
 
-#button_copy, #button_copy_nd, #button_copy_inac
- {
+#button_copy,
+#button_copy_nd,
+#button_copy_inac,
+#button_copy_ghd {
     margin-top: 1.5rem;
     padding: 0.7rem 1.2rem;
     background-color: #49d01b;
@@ -50,7 +52,10 @@ button {
     width: 100%;
 }
 
-#resultado, #resultadoNoDisponible, #resultadoInactividad {
+#resultado,
+#resultadoNoDisponible,
+#resultadoInactividad,
+#resultadoGHD {
     margin-top: 1.5rem;
     background: #ff83f5;
     padding: 1rem;

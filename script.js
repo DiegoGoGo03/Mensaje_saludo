@@ -94,3 +94,18 @@ function generarMensajeInactividad() {
 
 // Asociar botón a la función Botón de Mensaje por inactividad
 document.getElementById("button_copy_inac").addEventListener("click", copiarMensaje);
+
+
+//Mensaje para GHD
+function generarMensajeGHD() {
+    const mensaje = `Hola, hemos trasladado tu consulta directamente al equipo de desarrollo para que sea revisada con el detalle que requiere. Cerramos este ticket por este medio, pero el seguimiento continuará a través de TopDesk, donde recibirás las actualizaciones. Si necesitas reactivar la consulta más adelante, puedes reabrirla usando el número de ticket generado al inicio de esta conversación. Agradecemos tu paciencia y comprensión.`
+
+    document.getElementById("resultadoGHD").innerText = mensaje;
+
+    navigator.clipboard.writeText(mensaje)
+        .then(() => console.log("Mensaje copiado al portapapeles."))
+        .catch(err => console.warn("No se pudo copiar: ", err));
+}
+
+// Asociar botón a la función Botón de GHD
+document.getElementById("button_copy_ghd").addEventListener("click", copiarMensaje);
