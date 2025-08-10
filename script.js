@@ -38,6 +38,27 @@ function generarMensaje() {
     .catch(err => console.warn("No se pudo copiar: ", err));
 }
 
+
+// Copiar mensaje general
+function copiarMensaje() {
+    copiarDesdeDiv("resultado");
+}
+
+// Copiar mensaje no disponible
+function copiarMensajeNoDisponible() {
+    copiarDesdeDiv("resultadoNoDisponible");
+}
+
+// Copiar mensaje por inactividad
+function copiarMensajeInactividad() {
+    copiarDesdeDiv("resultadoInactividad");
+}
+
+// Copiar mensaje GHD
+function copiarMensajeGHD() {
+    copiarDesdeDiv("resultadoGHD");
+}
+
 //Copiar mensaje de saludo
 function copiarMensaje() {
     const mensaje = document.getElementById("resultado").innerText;
@@ -47,6 +68,18 @@ function copiarMensaje() {
         return;
     }
 
+    navigator.clipboard.writeText(mensaje)
+        .then(() => alert("Mensaje copiado al portapapeles."))
+        .catch(err => console.warn("No se pudo copiar: ", err));
+}
+
+// Función genérica que copia desde cualquier div por ID
+function copiarDesdeDiv(divId) {
+    const mensaje = document.getElementById(divId).innerText;
+    if (!mensaje) {
+        alert("Primero genera el mensaje antes de copiar.");
+        return;
+    }
     navigator.clipboard.writeText(mensaje)
         .then(() => alert("Mensaje copiado al portapapeles."))
         .catch(err => console.warn("No se pudo copiar: ", err));
@@ -108,4 +141,7 @@ function generarMensajeGHD() {
 }
 
 // Asociar botón a la función Botón de GHD
-document.getElementById("button_copy_ghd").addEventListener("click", copiarMensaje);
+document.getElementById("button_copy").addEventListener("click", copiarMensaje);
+document.getElementById("button_copy_nd").addEventListener("click", copiarMensajeNoDisponible);
+document.getElementById("button_copy_inac").addEventListener("click", copiarMensajeInactividad);
+document.getElementById("button_copy_ghd").addEventListener("click", copiarMensajeGHD);
