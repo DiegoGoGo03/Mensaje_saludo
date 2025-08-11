@@ -59,6 +59,12 @@ function copiarMensajeGHD() {
     copiarDesdeDiv("resultadoGHD");
 }
 
+// Copiar mensaje de fin día
+function copiarMensajeFinDia() {
+    copiarDesdeDiv("resultadoFinDia");
+}
+
+
 //Copiar mensaje de saludo
 function copiarMensaje() {
     const mensaje = document.getElementById("resultado").innerText;
@@ -86,7 +92,7 @@ function copiarDesdeDiv(divId) {
 }
 
 // Asociar botón a la función
-document.getElementById("button_copy").addEventListener("click", copiarMensaje);
+//document.getElementById("button_copy").addEventListener("click", copiarMensaje);
 
 
 //Generar mensaje de No Disponible.
@@ -112,7 +118,7 @@ function generarMensajeNoDisponible() {
 }
 
 // Asociar botón a la función Botón de mensaje no disponible
-document.getElementById("button_copy_nd").addEventListener("click", copiarMensaje);
+//document.getElementById("button_copy_nd").addEventListener("click", copiarMensaje);
 
 //Mensaje por inactiviadad.
 function generarMensajeInactividad() {
@@ -126,7 +132,7 @@ function generarMensajeInactividad() {
 }
 
 // Asociar botón a la función Botón de Mensaje por inactividad
-document.getElementById("button_copy_inac").addEventListener("click", copiarMensaje);
+//document.getElementById("button_copy_inac").addEventListener("click", copiarMensaje);
 
 
 //Mensaje para GHD
@@ -140,8 +146,23 @@ function generarMensajeGHD() {
         .catch(err => console.warn("No se pudo copiar: ", err));
 }
 
+
+//Mensaje para más de una hora o fin de día
+function generarMensajeFinDia() {
+    const nombre = document.getElementById('nombre_usuario_3').value.trim();
+    const mensaje = `Estimado ${nombre}, seguimos analizando tu consulta. Te mantendremos informado de cualquier avance. ¡Gracias por tu paciencia!.`
+
+    document.getElementById("resultadoFinDia").innerText = mensaje;
+
+    navigator.clipboard.writeText(mensaje)
+        .then(() => console.log("Mensaje copiado al portapapeles."))
+        .catch(err => console.warn("No se pudo copiar: ", err));
+}
+
+
 // Asociar botón a la función Botón de GHD
 document.getElementById("button_copy").addEventListener("click", copiarMensaje);
 document.getElementById("button_copy_nd").addEventListener("click", copiarMensajeNoDisponible);
 document.getElementById("button_copy_inac").addEventListener("click", copiarMensajeInactividad);
 document.getElementById("button_copy_ghd").addEventListener("click", copiarMensajeGHD);
+document.getElementById("button_copy_finDia").addEventListener("click", copiarMensajeFinDia);

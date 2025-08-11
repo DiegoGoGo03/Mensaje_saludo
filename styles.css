@@ -42,7 +42,8 @@ button {
 #button_copy,
 #button_copy_nd,
 #button_copy_inac,
-#button_copy_ghd {
+#button_copy_ghd,
+#button_copy_finDia {
     margin-top: 1.5rem;
     padding: 0.7rem 1.2rem;
     background-color: #49d01b;
@@ -55,7 +56,8 @@ button {
 #resultado,
 #resultadoNoDisponible,
 #resultadoInactividad,
-#resultadoGHD {
+#resultadoGHD,
+#resultadoFinDia {
     margin-top: 1.5rem;
     background: #ff83f5;
     padding: 1rem;

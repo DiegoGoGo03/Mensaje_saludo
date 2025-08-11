@@ -21,7 +21,7 @@
   <input type="text" id="otroOperador" placeholder="Escribe tu nombre">
   <br><br>
   <label for="nombre">Nombre del usuario:</label>
-  <input type="text" id="nombre" placeholder="Ej: Danilo">
+  <input type="text" id="nombre" placeholder="Ej: Andrea">
 
   <label for="ticket">N. de Ticket:</label>
   <input type="text" id="ticket" placeholder="Ej: T2507 0814">
@@ -46,7 +46,7 @@
   <br><br>
   
   <label for="nombre_usuario">Nombre del usuario:</label>
-  <input type="text" id="nombre_usuario" placeholder="Ej: Danilo">
+  <input type="text" id="nombre_usuario" placeholder="Ej: Andrea">
 
   <button onclick="generarMensajeNoDisponible()">Generar mensaje no disponible</button>
   <div id="resultadoNoDisponible"></div>
@@ -77,10 +77,19 @@
   <div id="resultadoGHD"></div>
   <button id="button_copy_ghd" type="button">Copiar mensaje</button>
 
+
+  <h2>Más de una hora en espera o fin de día</h2>
+  <h3 id="informacion">Si tenemos una consulta en la que estamos trabajando y lleva por lo menos más de una hora en espera o se finalice el día y no tengamos como concluir enviar el siguiente mensaje para que entienda que estamos pendientes.</h3>
+  <label for="nombre_usuario_3">Nombre del usuario:</label>
+  <input type="text" id="nombre_usuario_3" placeholder="Ej: Andrea">
+  <button id="botonFinDia" onclick="generarMensajeFinDia()">Generar mensaje para GHD</button>
+  <div id="resultadoFinDia"></div>
+  <button id="button_copy_finDia" type="button">Copiar mensaje</button>
+
   <br><br><br><br><br><br><br><br><br><br>
 
   <footer>
-    <h3>Versión V.0.1.2</h3>
+    <h3>Versión V.0.1.3</h3>
     <h3 id="kresto_dev">
       <a href="https://diego-felipe-gomez.netlify.app/#contact">&lt;KRESTO_DEV&gt;</a>
     </h3> 
